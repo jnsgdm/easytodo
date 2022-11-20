@@ -77,3 +77,10 @@
     font-size: 1.5em;
 }
 
+.done {
+    text-decoration: line-through #7743DB 2.5px;
+}
+
+.not-doen {
+    text-decoration: none;
+}
