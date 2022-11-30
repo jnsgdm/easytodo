@@ -1,0 +1,47 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li {
+    position: relative;
+    list-style: none;
+    max-width: 40vw;
+    line-height: 45px;
+    color: azure;
+    border-radius: 3px;
+    padding: 0 15px;
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
+input {
+    border: none;
+    width: 100%;
+    outline: none;
+    font-size: 0.9em;
+    font-family: 'Sono', sans-serif;
+    border-bottom: 1px solid #ffffff2d;
+    background-color: #282c34;
+    color: azure;
+    margin-top: 8%;
+    padding: 2%;
+}
+
+.add-btn {
+    border: none;
+    text-shadow: none;
+    background-color: #7743DB;
+    width: 100%;
+    margin-top: 1em;
+    border-radius: 3em;
+}
+
+.done {
+    text-decoration: line-through #7743DB 2.5px;
+}
+
+.not-doen {
+    text-decoration: none;
+}

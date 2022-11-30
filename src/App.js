@@ -1,13 +1,19 @@
 import './App.css';
 
-import List from './components/List';
-import Title from './components/Title';
+import Title from './components/Title/Title';
+import Todo from './components/Todo/Todo';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <Title />
-      <List />
+        <header>
+          <Title/>
+        </header>
+        <Todo />
+        <footer>
+          <Footer/>
+        </footer>
     </div>
   );
 }
