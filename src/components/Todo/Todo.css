@@ -1,19 +1,18 @@
-form {
+.form-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+    width: 90%;
 }
 
 li {
-    position: relative;
     list-style: none;
     max-width: 40vw;
-    line-height: 45px;
     color: azure;
     border-radius: 3px;
-    padding: 0 15px;
     cursor: pointer;
     word-wrap: break-word;
+    margin-top: 1em;
 }
 
 input {
@@ -22,26 +21,85 @@ input {
     outline: none;
     font-size: 0.9em;
     font-family: 'Sono', sans-serif;
-    border-bottom: 1px solid #ffffff2d;
-    background-color: #282c34;
+    background-color: #414752;
+    border-radius: 3em;
     color: azure;
-    margin-top: 8%;
-    padding: 2%;
+    margin-top: 3%;
+    padding: 1.8%;
+}
+
+.line {
+    width: 100%;
+    margin-top: 1em;
+    border-bottom: 0.1em solid #505969;
 }
 
 .add-btn {
     border: none;
     text-shadow: none;
-    background-color: #7743DB;
-    width: 100%;
-    margin-top: 1em;
+    background-color: #3a8891af;
+    width: 18vw;
+    margin-top: 0.8em;
+    margin-left: 0.5em;
     border-radius: 3em;
+    padding: 0.4em;
+    color: azure;
+    font-size: 0.9em;
+    text-align: center;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.add-btn:hover{
+    background-color: azure;
+    color: #505969;
+    font-weight: bold;
+    font-size: 0.9em;
 }
 
 .done {
-    text-decoration: line-through #7743DB 2.5px;
+    text-decoration: line-through #32767e 2.5px;
 }
 
 .not-doen {
     text-decoration: none;
+}
+
+.msg {
+    margin-top: 1em;
+    color: azure;
+}
+
+.item-container{
+    display: flex;
+    align-items: center;
+}
+
+.delete-icon {
+    margin-left: 1em;
+    color: #E0144C;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+.delete-icon:hover {
+    color: #32767e;
+}
+
+@media screen and (max-width: 465px) {
+    .add-btn {
+        font-size: 0.6em;
+    }
+
+    input {
+        font-size: 0.6em;
+    }
+
+    li {
+        font-size: 0.7em;
+    }
+
+    .delete-icon {
+        font-size: 0.7em;
+    }
 }

@@ -2,7 +2,7 @@ import {useState} from 'react'
 
 import '../Todo/Todo.css'
 
-import { AiOutlineCheckCircle } from "react-icons/ai";
+import { AiFillDelete } from "react-icons/ai";
 
 const Todo = () => {
   const [valueTask, setValueTask] = useState("");
@@ -10,12 +10,17 @@ const Todo = () => {
 
   const handleTaskAdd = (e) => {
     e.preventDefault();
-    const newTask = {
-      id: taskList.length + 1,
-      value: valueTask,
-      haveDone: false
+    if(!valueTask){
+      alert("mo fita")
+    }else{
+      const newTask = {
+        id: taskList.length + 1,
+        value: valueTask,
+        haveDone: false
+      }
+      setTaskList([...taskList, newTask]);
     }
-    setTaskList([...taskList, newTask]);
+    setValueTask("")
   }
 
   const handleTaskDone = (task) => {
@@ -26,6 +31,13 @@ const Todo = () => {
       return item;
     });
     setTaskList(updatedTaskList);
+  }
+
+  const handleDeleteTask = (task) => {
+    const filterTaskList = taskList.filter((item) => {
+      return item.id !== task.id;
+    });
+    setTaskList(filterTaskList);
   }
 
   return (
@@ -39,14 +51,20 @@ const Todo = () => {
           onChange={(e) => setValueTask(e.target.value)}
         />
         <button type='submit' className='add-btn'>
-          <AiOutlineCheckCircle style={{ color: 'azure', fontSize: '2em' }}/>
+          Adicionar 
         </button>
       </form>
-      {taskList.map((task,index) => (
-        <li key={task.id} onClick={() => handleTaskDone(task)} className={task.haveDone ? 'done' : 'not-done'}>
-          {index+1}. {task.value}
-        </li>
-      ))}
+
+      { taskList.length !== 0 && <div className='line'></div> }
+
+      {taskList.map((task, index) => (
+          <div className='item-container'>
+            <li key={task.id} onClick={() => handleTaskDone(task)} className={task.haveDone ? 'done' : 'not-done'}>
+              {index + 1}. {task.value}
+            </li>
+            <AiFillDelete onClick={() => handleDeleteTask(task)} className='delete-icon' />
+          </div>
+        ))}
     </>
   )
 }

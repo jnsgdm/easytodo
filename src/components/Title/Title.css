@@ -8,5 +8,11 @@
 }
 
 .second {
-    color: #7743DB;
+    color: #3A8891;
+}
+
+@media screen and (max-width: 465px) {
+    .title label{
+        font-size: 240%;
+    }
 }
