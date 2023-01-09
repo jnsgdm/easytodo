@@ -11,7 +11,7 @@ const Todo = () => {
   const handleTaskAdd = (e) => {
     e.preventDefault();
     if(!valueTask){
-      alert("Não existe tarefa vaiza!")
+      alert("Não existe tarefa vazia!")
     }else{
       const newTask = {
         id: taskList.length + 1,
