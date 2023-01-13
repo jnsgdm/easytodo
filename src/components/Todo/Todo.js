@@ -3,15 +3,17 @@ import {useState} from 'react'
 import '../Todo/Todo.css'
 
 import { AiFillDelete } from "react-icons/ai";
+import Msg from '../Msg/Msg';
 
 const Todo = () => {
   const [valueTask, setValueTask] = useState("");
   const [taskList, setTaskList] = useState([]);
+  const [haveMsg,setHaveMsg] = useState(false);
 
   const handleTaskAdd = (e) => {
     e.preventDefault();
     if(!valueTask){
-      alert("Não existe tarefa vazia!")
+      setHaveMsg(true);
     }else{
       const newTask = {
         id: taskList.length + 1,
@@ -39,9 +41,17 @@ const Todo = () => {
     });
     setTaskList(filterTaskList);
   }
+  
+  const handleHaveMsg = () => {
+    setTimeout(() => {
+      setHaveMsg(false) 
+    }, 2000);
+  }
 
   return (
     <>
+      {haveMsg && <Msg msg="Não existe tarefa vazia"/>}
+      {haveMsg && handleHaveMsg()}
       <form onSubmit={handleTaskAdd} className='form-container'>
         <input
           type="text"

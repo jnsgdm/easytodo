@@ -1,0 +1,14 @@
+.msg {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #E0144C;
+    padding: 0.8em;
+    border-radius: 1em;
+}
+
+.msg p{
+    font-size: 0.8em;
+    font-weight: bolder;
+    color: azure;
+}

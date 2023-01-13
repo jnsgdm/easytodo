@@ -12,7 +12,7 @@ li {
     border-radius: 3px;
     cursor: pointer;
     word-wrap: break-word;
-    margin-top: 1em;
+    font-size: 1em;
 }
 
 input {
@@ -32,6 +32,7 @@ input {
     width: 100%;
     margin-top: 1em;
     border-bottom: 0.1em solid #505969;
+    margin-bottom: 1em;
 }
 
 .add-btn {
@@ -73,13 +74,14 @@ input {
 .item-container{
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2em;
 }
 
 .delete-icon {
-    margin-left: 1em;
+    margin-left: 0.5em;
     color: #E0144C;
     cursor: pointer;
-    margin-top: 1em;
 }
 
 .delete-icon:hover {
