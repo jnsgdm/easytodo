@@ -4,11 +4,16 @@ import '../Todo/Todo.css'
 
 import { AiFillDelete } from "react-icons/ai";
 import Msg from '../Msg/Msg';
+import { useEffect } from 'react';
 
-const Todo = () => {
+const Todo = (props) => {
   const [valueTask, setValueTask] = useState("");
-  const [taskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState(props.taskList);
   const [haveMsg,setHaveMsg] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('tasks',JSON.stringify(taskList));
+  },[taskList]);
 
   const handleTaskAdd = (e) => {
     e.preventDefault();
@@ -68,8 +73,8 @@ const Todo = () => {
       { taskList.length !== 0 && <div className='line'></div> }
 
       {taskList.map((task, index) => (
-          <div className='item-container'>
-            <li key={task.id} onClick={() => handleTaskDone(task)} className={task.haveDone ? 'done' : 'not-done'}>
+          <div key={task.id} className='item-container'>
+            <li onClick={() => handleTaskDone(task)} className={task.haveDone ? 'done' : 'not-done'}>
               {index + 1}. {task.value}
             </li>
             <AiFillDelete onClick={() => handleDeleteTask(task)} className='delete-icon' />
